@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct PayMayaToken {
+public struct PayMayaToken : Decodable {
    public var paymentTokenId : String
    public var state : String
    public var createdAt : String
