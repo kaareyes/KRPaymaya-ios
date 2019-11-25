@@ -13,6 +13,7 @@ import UIKit
 public class PayMayaSDK {
   public static let shared =  PayMayaSDK()
    public var apimanager : APIManager?
+    public var token : PayMayaToken?
 
    public enum environment : String {
         case production = "production"

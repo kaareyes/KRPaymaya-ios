@@ -1,0 +1,6 @@
+framework module Pods_krPayMaya_krPayMayaTests {
+  umbrella header "Pods-krPayMaya-krPayMayaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

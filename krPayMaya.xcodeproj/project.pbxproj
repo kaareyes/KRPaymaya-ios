@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027E8C3025BF1BF795229C58 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09B2F1C12996B505D4AE229 /* Pods_Example.framework */; };
+		1913EA45744CF717DBB2DFEB /* Pods_krPayMaya_krPayMayaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F48CF4AE8B73259BB35D3F0 /* Pods_krPayMaya_krPayMayaTests.framework */; };
+		5DD626E00087F595A99F9608 /* Pods_Example_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A70C48E1998255D88E36E2 /* Pods_Example_ExampleUITests.framework */; };
+		A3BAB674B0007DB625AB206F /* Pods_krPayMaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7919BFD12B56822F68D7A5AF /* Pods_krPayMaya.framework */; };
 		AF59E7D0234F04430092D7D2 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF59E7CF234F04430092D7D2 /* assets.xcassets */; };
 		AFBCF860234E25140039397B /* krPayMaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBCF856234E25130039397B /* krPayMaya.framework */; };
 		AFBCF865234E25140039397B /* krPayMayaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCF864234E25140039397B /* krPayMayaTests.swift */; };
@@ -24,6 +28,8 @@
 		AFBCF8D8234E33A40039397B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCF8D7234E33A40039397B /* ExampleTests.swift */; };
 		AFBCF8E3234E33A40039397B /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCF8E2234E33A40039397B /* ExampleUITests.swift */; };
 		AFBCF8EF234E3C0D0039397B /* CreditCardInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCF8EE234E3C0D0039397B /* CreditCardInputViewController.swift */; };
+		AFBD3CA7238C1C7F00053D9C /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD3CA6238C1C7F00053D9C /* CardModel.swift */; };
+		BB0A80CE24DAA007A0489AD6 /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550AF971C6DB9E01A7C9E5E7 /* Pods_ExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		144A5F7F69D65C8D70EA2939 /* Pods-Example-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2A6E06682DE649A94E3CE4F3 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3214750D1CCFF00DD869C7F6 /* Pods-krPayMaya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krPayMaya.debug.xcconfig"; path = "Target Support Files/Pods-krPayMaya/Pods-krPayMaya.debug.xcconfig"; sourceTree = "<group>"; };
+		550AF971C6DB9E01A7C9E5E7 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		688E5773051C8A59601F1B03 /* Pods-Example-ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7919BFD12B56822F68D7A5AF /* Pods_krPayMaya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_krPayMaya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		859E62EBE14FE4DBF98E60AA /* Pods-krPayMaya-krPayMayaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krPayMaya-krPayMayaTests.debug.xcconfig"; path = "Target Support Files/Pods-krPayMaya-krPayMayaTests/Pods-krPayMaya-krPayMayaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8BFFED150C354C258F3ECE75 /* Pods-krPayMaya-krPayMayaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krPayMaya-krPayMayaTests.release.xcconfig"; path = "Target Support Files/Pods-krPayMaya-krPayMayaTests/Pods-krPayMaya-krPayMayaTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F48CF4AE8B73259BB35D3F0 /* Pods_krPayMaya_krPayMayaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_krPayMaya_krPayMayaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A70C48E1998255D88E36E2 /* Pods_Example_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD25BE2FD9917F8602DBF1B /* Pods-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF59E7CF234F04430092D7D2 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		AFBCF856234E25130039397B /* krPayMaya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = krPayMaya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCF859234E25130039397B /* krPayMaya.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = krPayMaya.h; sourceTree = "<group>"; };
@@ -77,6 +94,11 @@
 		AFBCF8E2234E33A40039397B /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		AFBCF8E4234E33A40039397B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFBCF8EE234E3C0D0039397B /* CreditCardInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInputViewController.swift; sourceTree = "<group>"; };
+		AFBD3CA6238C1C7F00053D9C /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		BE25CEAB7F3CCBB2F85289CA /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		D1BF3172D7AE9B56E82402B8 /* Pods-krPayMaya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krPayMaya.release.xcconfig"; path = "Target Support Files/Pods-krPayMaya/Pods-krPayMaya.release.xcconfig"; sourceTree = "<group>"; };
+		D257DAC3702C8C724391B0AC /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E09B2F1C12996B505D4AE229 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BAB674B0007DB625AB206F /* Pods_krPayMaya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFBCF860234E25140039397B /* krPayMaya.framework in Frameworks */,
+				1913EA45744CF717DBB2DFEB /* Pods_krPayMaya_krPayMayaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027E8C3025BF1BF795229C58 /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0A80CE24DAA007A0489AD6 /* Pods_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,12 +139,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DD626E00087F595A99F9608 /* Pods_Example_ExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28E24971553129374E077485 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A6E06682DE649A94E3CE4F3 /* Pods-Example.debug.xcconfig */,
+				BE25CEAB7F3CCBB2F85289CA /* Pods-Example.release.xcconfig */,
+				144A5F7F69D65C8D70EA2939 /* Pods-Example-ExampleUITests.debug.xcconfig */,
+				688E5773051C8A59601F1B03 /* Pods-Example-ExampleUITests.release.xcconfig */,
+				D257DAC3702C8C724391B0AC /* Pods-ExampleTests.debug.xcconfig */,
+				9CD25BE2FD9917F8602DBF1B /* Pods-ExampleTests.release.xcconfig */,
+				3214750D1CCFF00DD869C7F6 /* Pods-krPayMaya.debug.xcconfig */,
+				D1BF3172D7AE9B56E82402B8 /* Pods-krPayMaya.release.xcconfig */,
+				859E62EBE14FE4DBF98E60AA /* Pods-krPayMaya-krPayMayaTests.debug.xcconfig */,
+				8BFFED150C354C258F3ECE75 /* Pods-krPayMaya-krPayMayaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF7202F9238BBA2C00C3D8C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCF8EE234E3C0D0039397B /* CreditCardInputViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF7202FA238BBA3400C3D8C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCF874234E2A860039397B /* PayMayaCard.swift */,
+				AFBCF876234E2C010039397B /* PayMayaToken.swift */,
+				AFBD3CA6238C1C7F00053D9C /* CardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF7202FB238BBA3B00C3D8C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF7202FC238BBA5A00C3D8C3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCF870234E25690039397B /* PayMayaSDK.swift */,
+				AFBCF872234E28B80039397B /* APIManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		AFBCF84C234E25130039397B = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +206,8 @@
 				AFBCF8D6234E33A40039397B /* ExampleTests */,
 				AFBCF8E1234E33A40039397B /* ExampleUITests */,
 				AFBCF857234E25130039397B /* Products */,
+				28E24971553129374E077485 /* Pods */,
+				CFE70DABB609F080CF5BA10D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,13 +226,12 @@
 		AFBCF858234E25130039397B /* krPayMaya */ = {
 			isa = PBXGroup;
 			children = (
+				AF7202FC238BBA5A00C3D8C3 /* Service */,
+				AF7202FB238BBA3B00C3D8C3 /* ViewModel */,
+				AF7202FA238BBA3400C3D8C3 /* Models */,
+				AF7202F9238BBA2C00C3D8C3 /* Controller */,
 				AFBCF859234E25130039397B /* krPayMaya.h */,
 				AFBCF85A234E25130039397B /* Info.plist */,
-				AFBCF870234E25690039397B /* PayMayaSDK.swift */,
-				AFBCF8EE234E3C0D0039397B /* CreditCardInputViewController.swift */,
-				AFBCF872234E28B80039397B /* APIManager.swift */,
-				AFBCF874234E2A860039397B /* PayMayaCard.swift */,
-				AFBCF876234E2C010039397B /* PayMayaToken.swift */,
 				AF59E7CF234F04430092D7D2 /* assets.xcassets */,
 			);
 			path = krPayMaya;
@@ -199,6 +278,18 @@
 			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
+		CFE70DABB609F080CF5BA10D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E09B2F1C12996B505D4AE229 /* Pods_Example.framework */,
+				91A70C48E1998255D88E36E2 /* Pods_Example_ExampleUITests.framework */,
+				550AF971C6DB9E01A7C9E5E7 /* Pods_ExampleTests.framework */,
+				7919BFD12B56822F68D7A5AF /* Pods_krPayMaya.framework */,
+				8F48CF4AE8B73259BB35D3F0 /* Pods_krPayMaya_krPayMayaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -217,6 +308,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCF86A234E25140039397B /* Build configuration list for PBXNativeTarget "krPayMaya" */;
 			buildPhases = (
+				35E57BCDF08898E886385556 /* [CP] Check Pods Manifest.lock */,
 				AFBCF851234E25130039397B /* Headers */,
 				AFBCF852234E25130039397B /* Sources */,
 				AFBCF853234E25130039397B /* Frameworks */,
@@ -235,6 +327,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCF86D234E25140039397B /* Build configuration list for PBXNativeTarget "krPayMayaTests" */;
 			buildPhases = (
+				17547E7C69786B573BDA4280 /* [CP] Check Pods Manifest.lock */,
 				AFBCF85B234E25140039397B /* Sources */,
 				AFBCF85C234E25140039397B /* Frameworks */,
 				AFBCF85D234E25140039397B /* Resources */,
@@ -253,9 +346,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCF8E5234E33A40039397B /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				B3A7B85BE35CCB382B996103 /* [CP] Check Pods Manifest.lock */,
 				AFBCF8BA234E33A20039397B /* Sources */,
 				AFBCF8BB234E33A20039397B /* Frameworks */,
 				AFBCF8BC234E33A20039397B /* Resources */,
+				DADD413F6B7850C061E5A3E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +365,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCF8E8234E33A40039397B /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
+				022CAADA899560805B648DDA /* [CP] Check Pods Manifest.lock */,
 				AFBCF8CF234E33A40039397B /* Sources */,
 				AFBCF8D0234E33A40039397B /* Frameworks */,
 				AFBCF8D1234E33A40039397B /* Resources */,
@@ -288,9 +384,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCF8EB234E33A40039397B /* Build configuration list for PBXNativeTarget "ExampleUITests" */;
 			buildPhases = (
+				27DEBC3F1FA2963BA826182C /* [CP] Check Pods Manifest.lock */,
 				AFBCF8DA234E33A40039397B /* Sources */,
 				AFBCF8DB234E33A40039397B /* Frameworks */,
 				AFBCF8DC234E33A40039397B /* Resources */,
+				301FAEBE41766830576959F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,6 +494,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		022CAADA899560805B648DDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17547E7C69786B573BDA4280 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-krPayMaya-krPayMayaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27DEBC3F1FA2963BA826182C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-ExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		301FAEBE41766830576959F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35E57BCDF08898E886385556 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-krPayMaya-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A7B85BE35CCB382B996103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DADD413F6B7850C061E5A3E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFBCF852234E25130039397B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -406,6 +651,7 @@
 				AFBCF871234E25690039397B /* PayMayaSDK.swift in Sources */,
 				AFBCF8EF234E3C0D0039397B /* CreditCardInputViewController.swift in Sources */,
 				AFBCF875234E2A860039397B /* PayMayaCard.swift in Sources */,
+				AFBD3CA7238C1C7F00053D9C /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +851,7 @@
 		};
 		AFBCF86B234E25140039397B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3214750D1CCFF00DD869C7F6 /* Pods-krPayMaya.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -632,6 +879,7 @@
 		};
 		AFBCF86C234E25140039397B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1BF3172D7AE9B56E82402B8 /* Pods-krPayMaya.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,6 +906,7 @@
 		};
 		AFBCF86E234E25140039397B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859E62EBE14FE4DBF98E60AA /* Pods-krPayMaya-krPayMayaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -677,6 +926,7 @@
 		};
 		AFBCF86F234E25140039397B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BFFED150C354C258F3ECE75 /* Pods-krPayMaya-krPayMayaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -696,6 +946,7 @@
 		};
 		AFBCF8E6234E33A40039397B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6E06682DE649A94E3CE4F3 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -714,6 +965,7 @@
 		};
 		AFBCF8E7234E33A40039397B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE25CEAB7F3CCBB2F85289CA /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -732,6 +984,7 @@
 		};
 		AFBCF8E9234E33A40039397B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D257DAC3702C8C724391B0AC /* Pods-ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -754,6 +1007,7 @@
 		};
 		AFBCF8EA234E33A40039397B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD25BE2FD9917F8602DBF1B /* Pods-ExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -776,6 +1030,7 @@
 		};
 		AFBCF8EC234E33A40039397B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 144A5F7F69D65C8D70EA2939 /* Pods-Example-ExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -796,6 +1051,7 @@
 		};
 		AFBCF8ED234E33A40039397B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688E5773051C8A59601F1B03 /* Pods-Example-ExampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

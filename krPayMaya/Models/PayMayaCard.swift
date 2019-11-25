@@ -9,15 +9,15 @@
 import Foundation
 
 
-public struct PayMayaCard {
-   public var name : String
+public struct PayMayaCard :Encodable {
+   //public var name : String
    public var number : String
    public var expMonth : String
    public var expYear : String
    public var cvc : String
     
    public init(name:String,number:String,expMonth:String,expYear:String,cvc:String){
-        self.name = name
+    //    self.name = name
         self.number = number
         self.expMonth = expMonth
         self.expYear = expYear

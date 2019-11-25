@@ -10,6 +10,12 @@ import UIKit
 
 class CreditCardInputViewController: UIViewController {
     
+    let monthValue : [String] = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    var yearValue : [String] = []
+    
+    var _selectedMonthValue : String?
+    var _selectedYearValue : String?
+
     var closeButton : UIButton = {
         let image = UIImage(named: "close-button", in: Bundle(for: CreditCardInputViewController.self), compatibleWith: nil)
         let b = UIButton()
@@ -18,6 +24,15 @@ class CreditCardInputViewController: UIViewController {
         b.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
+    }()
+    lazy var purchaseButton : UIButton = {
+       let button = UIButton()
+        button.backgroundColor = UIColor(hexString: "2b3748")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Continue", for: .normal)
+        button.titleLabel?.textColor = .white
+        button.addTarget(self, action: #selector(continueAction(sender:)), for: .touchUpInside)
+        return button
     }()
     
     
@@ -66,8 +81,10 @@ class CreditCardInputViewController: UIViewController {
     lazy var nameTF : UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.placeholder = "Exp:Kristopher Am Reyes"
+        tf.placeholder = "Exp:Kristopher Amiel Reyes"
         tf.borderStyle = .roundedRect
+        tf.delegate = self
+
         return tf
     }()
     
@@ -87,6 +104,8 @@ class CreditCardInputViewController: UIViewController {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = "4100 3451 4508 8763"
         tf.borderStyle = .roundedRect
+        tf.keyboardType = .numberPad
+        tf.delegate = self
         return tf
     }()
      
@@ -106,6 +125,8 @@ class CreditCardInputViewController: UIViewController {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = "MM / YY"
         tf.borderStyle = .roundedRect
+        tf.delegate = self
+
         return tf
     }()
     
@@ -116,6 +137,7 @@ class CreditCardInputViewController: UIViewController {
         l.text = "CCV (last 3 digits on the back)"
         l.backgroundColor = .clear
         l.translatesAutoresizingMaskIntoConstraints = false
+        
         return l
     }()
     
@@ -124,19 +146,39 @@ class CreditCardInputViewController: UIViewController {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = "123"
         tf.borderStyle = .roundedRect
+        tf.keyboardType = .numberPad
+        tf.delegate = self
+
         return tf
     }()
     
-    lazy var purchaseButton : UIButton = {
-       let button = UIButton()
-        button.backgroundColor = UIColor(hexString: "2b3748")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Continue", for: .normal)
-        button.titleLabel?.textColor = .white
+    lazy var expiryPicker : UIPickerView = {
+       let d = UIPickerView()
+        d.translatesAutoresizingMaskIntoConstraints = false
+        d.dataSource = self
+        d.delegate = self
+        d.tag = 1
+        d.backgroundColor = .clear
         
-        return button
+        return d
+    }()
+        
+    lazy var datePickerView : UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = UIColor(hexString: "F7F7F7")
+        v.isHidden = true
+        return v
     }()
     
+    lazy var doneButton : UIButton = {
+       let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Done", for: .normal)
+        button.setTitleColor(UIColor(hexString: "2b3748"), for: .normal)
+        button.addTarget(self, action: #selector(doneAction(sender:)), for: .touchUpInside)
+        return button
+    }()
 
 
     override func viewDidLoad() {
@@ -156,6 +198,7 @@ class CreditCardInputViewController: UIViewController {
     }
     
     func setup(){
+        yearValue = self.getYearValue()
         addBlurEffect()
         self.view.addSubview(creditcardView)
         self.view.addSubview(closeButton)
@@ -175,6 +218,10 @@ class CreditCardInputViewController: UIViewController {
         self.creditcardView.addSubview(ccvTF)
         
         self.creditcardView.addSubview(purchaseButton)
+        
+        self.view.addSubview(datePickerView)
+        self.datePickerView.addSubview(expiryPicker)
+        self.datePickerView.addSubview(doneButton)
     }
     
     func addBlurEffect(){
@@ -260,7 +307,33 @@ class CreditCardInputViewController: UIViewController {
         self.purchaseButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.purchaseButton.leftAnchor.constraint(equalTo: self.creditcardView.leftAnchor,constant: 20).isActive = true
         self.purchaseButton.rightAnchor.constraint(equalTo: self.creditcardView.rightAnchor,constant: -20).isActive = true
+        
+        
+        self.datePickerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -10).isActive = true
+        self.datePickerView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.datePickerView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        self.datePickerView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
+        self.expiryPicker.bottomAnchor.constraint(equalTo: self.datePickerView.bottomAnchor).isActive = true
+        self.expiryPicker.leftAnchor.constraint(equalTo: self.datePickerView.leftAnchor).isActive = true
+        self.expiryPicker.rightAnchor.constraint(equalTo: self.datePickerView.rightAnchor).isActive = true
+        self.expiryPicker.topAnchor.constraint(equalTo: self.datePickerView.topAnchor,constant: 30).isActive = true
 
+        self.doneButton.topAnchor.constraint(equalTo: self.datePickerView.topAnchor,constant: 10).isActive = true
+        self.doneButton.rightAnchor.constraint(equalTo: self.datePickerView.rightAnchor,constant: -5).isActive = true
+        self.doneButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        self.doneButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+    
+    }
+    func getYearValue() -> [String] {
+        let calendar = Calendar.current
+        let componet = calendar.component(.year, from: Date())
+        var years : [String] = []
+        for year in componet...(componet + 20){
+            years.append(String(year))
+        }
+        return years
     }
     
     func viewCornerRadius(){
@@ -279,6 +352,88 @@ class CreditCardInputViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func continueAction(sender : UIButton){
+        print("Continue")
+        self.createPayment()
+    }
+    @objc func doneAction(sender : UIButton){
+        if checkExpiryDate() {
+            hideDatePicker()
+            self.expiryTF.text = String(format: "%02d / %@", Int(_selectedMonthValue!)!,_selectedYearValue!)
+        }else{
+            print("error")
+
+        }
+
+        
+        
+    }
+    
+    func checkExpiryDate() -> Bool{
+        guard let year = _selectedYearValue,
+            let month = _selectedMonthValue else{
+                return false
+        }
+        let calendar = Calendar.current
+        let yearCalendar = calendar.component(.year, from: Date())
+        let monthCalendar = calendar.component(.month, from: Date())
+        if Int(year)! == yearCalendar {
+            if Int(year)! >= yearCalendar && Int(month)! >= monthCalendar{
+                return true
+            }else{
+                return false
+            }
+        }
+        
+        return true
+        
+        
+    }
+    
+    func createPayment(){
+        guard let name = nameTF.text,
+            let number = cardnumberTF.text,
+            let ccv = ccvTF.text,
+            let month = _selectedMonthValue,
+            let year = _selectedYearValue else{
+                fatalError("Invalid credit Card information")
+        }
+        
+        let card = PayMayaCard.init(name: name, number: number, expMonth: month, expYear: year, cvc: ccv)
+        APIManager.shared.createPaymentTokenFromCard(card: card) { (token, errorString) in
+            if let token = token {
+                PayMayaSDK.shared.token = token
+                DispatchQueue.main.async {
+                  self.dismiss(animated: true, completion: nil)
+                }
+            }else{
+                print(errorString)
+            }
+        }
+    }
+    
+    
+    func showDatePicker(){
+        if _selectedMonthValue == nil && _selectedYearValue == nil {
+            _selectedMonthValue = monthValue.first
+            _selectedYearValue = yearValue.first
+        }
+        datePickerView.isHidden = false
+    }
+    func hideDatePicker(){
+        datePickerView.isHidden = true
+    }
+    
+    func formatCreditCardNumber() -> Bool {
+       // self.cardnumberTF.text = self.cardnumberTF.text?.group(by: 5, separator: " ")
+        return true
+    }
+    func formatCCVNumber() -> Bool {
+         
+         
+         return true
+     }
+    
     /*
     // MARK: - Navigation
 
@@ -290,6 +445,65 @@ class CreditCardInputViewController: UIViewController {
     */
 
 }
+
+extension CreditCardInputViewController : UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1{
+            return yearValue.count
+
+        }else{
+            return monthValue.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 1 {
+            return yearValue[row]
+        }else{
+            return monthValue[row]
+
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 1 {
+            _selectedYearValue = yearValue[row]
+        }else{
+            _selectedMonthValue = monthValue[row]
+        }
+    }
+}
+
+
+extension CreditCardInputViewController : UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField ==  self.expiryTF {
+            self.showDatePicker()
+            self.creditcardView.endEditing(true)
+            return false
+        }
+        
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if textField == self.ccvTF{
+            return formatCCVNumber()
+        }else if textField == self.cardnumberTF{
+            return formatCreditCardNumber()
+
+        }
+        return true
+    }
+    
+}
+
+
 extension UIColor {
  convenience init(hexString: String, alpha: CGFloat = 1.0) {
     let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -308,4 +522,18 @@ extension UIColor {
     let blue = CGFloat(b) / 255.0
     self.init(red:red, green:green, blue:blue, alpha:alpha)
  }
+}
+extension String
+{
+   func group(by groupSize:Int=3, separator:String="-") -> String {
+    let characters = self.trimmingCharacters(in: .whitespaces)
+      if characters.count <= groupSize   { return self }
+
+      let splitSize  = min(max(2,characters.count-2) , groupSize)
+      let splitIndex = index(startIndex, offsetBy:splitSize)
+
+      return substring(to:splitIndex)
+           + separator
+           + substring(from:splitIndex).group(by:groupSize, separator:separator)
+   }
 }
