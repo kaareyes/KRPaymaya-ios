@@ -403,6 +403,8 @@ class CreditCardInputViewController: UIViewController {
         APIManager.shared.createPaymentTokenFromCard(card: card) { (token, errorString) in
             if let token = token {
                 PayMayaSDK.shared.token = token
+                print(token)
+                print(token.paymentTokenId)
                 DispatchQueue.main.async {
                   self.dismiss(animated: true, completion: nil)
                 }
